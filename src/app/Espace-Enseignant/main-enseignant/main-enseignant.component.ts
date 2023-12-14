@@ -8,6 +8,7 @@ import { ServiceAuthentificationService } from 'src/app/Authentification/Service
   styleUrls: ['./main-enseignant.component.scss']
 })
 export class MainEnseignantComponent {
+
 constructor(private isUser : ServiceAuthentificationService,private route : Router){
   if( this.isUser.IsUser() == false)
   {
@@ -16,5 +17,8 @@ constructor(private isUser : ServiceAuthentificationService,private route : Rout
 }
 user(){
   return this.isUser.IsUser()
+}
+afficherMatieres() {
+  this.route.navigate(['Enseignant/Matiere']);
 }
 }
